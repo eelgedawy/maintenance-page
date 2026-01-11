@@ -2,7 +2,8 @@
     --bg-color: #f8f9fc;
     --card-bg: #ffffff;
     --text-color: #334e68;
-    --shadow-color: rgba(17, 12, 46, 0.08); /* Soft, premium shadow */
+    --shadow-color: rgba(17, 12, 46, 0.08);
+    /* Soft, premium shadow */
     --font-family: 'Almarai', sans-serif;
 }
 
@@ -31,12 +32,13 @@ body {
 
 .card {
     background: var(--card-bg);
-    border-radius: 40px; /* Highly rounded corners as per reference */
+    border-radius: 40px;
+    /* Highly rounded corners as per reference */
     padding: 60px 40px;
     text-align: center;
-    box-shadow: 
+    box-shadow:
         0 20px 40px var(--shadow-color),
-        0 1px 3px rgba(0,0,0,0.05);
+        0 1px 3px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,23 +48,25 @@ body {
     animation: float 6s ease-in-out infinite;
 }
 
-/* 3D Gear Icon */
+/* 3D Icon */
 .icon-container {
     perspective: 1000px;
 }
 
-.gear-icon {
+.check-icon {
     width: 120px;
     height: auto;
     object-fit: contain;
-    /* Slow, subtle rotation */
-    animation: rotate 10s linear infinite;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    /* Gentle floating, no rotation */
+    animation: pulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 15px rgba(0, 200, 0, 0.2));
+    /* Greenish shadow glow */
 }
 
 .message {
     color: #2d3748;
-    font-size: 1.5rem; /* Large readable text */
+    font-size: 1.5rem;
+    /* Large readable text */
     font-weight: 700;
     line-height: 1.6;
     max-width: 90%;
@@ -70,19 +74,25 @@ body {
 }
 
 /* Animations */
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
     }
-    to {
-        transform: rotate(360deg);
+
+    50% {
+        transform: scale(1.05);
     }
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
